@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewmodel"
+            type="com.android.gaurav.myproject.authentication.LoginViewModel" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#9AA7F1"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbarId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/tabLayoutId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    app:tabGravity="fill"
+                    app:tabIndicatorColor="@color/colorWhite"
+                    app:tabIndicatorHeight="2dp" />
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPagerId"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="15dp" />
+
+        </LinearLayout>
+
+        <!--<ProgressBar
+            android:id="@+id/progressBarId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:clickable="false"
+            android:visibility="@{viewmodel.loading ? View.VISIBLE :View.GONE}" />-->
+    </FrameLayout>
+</layout>
